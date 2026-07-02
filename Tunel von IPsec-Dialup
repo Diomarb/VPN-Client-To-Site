@@ -1,0 +1,36 @@
+
+# Configuración de Túnel VPN IPsec (Dialup) - Guía Técnica
+
+Esta guía resume los pasos necesarios para configurar un túnel IPsec de acceso remoto en FortiGate, basado en los requerimientos de tu laboratorio académico.
+
+## 1. Asistente de VPN (VPN Wizard)
+* Inicia el **VPN Wizard** desde el menú **VPN > IPsec Wizard**.
+* **Template Type**: Selecciona `Remote Access`.
+* **Remote Device Type**: Selecciona `FortiClient`.
+
+## 2. Configuración Avanzada (Custom Tunnel)
+Una vez creado el túnel por el asistente, es obligatorio convertirlo para ajustar los parámetros de seguridad:
+* Haz clic en **"Convert To Custom Tunnel"** dentro de la edición del túnel.
+* Accede a la configuración de la **Phase 1** y ajusta los siguientes parámetros:
+    * **IKE Version**: 1 o 2 (según los parámetros del lab).
+    * **Mode**: `Aggressive`.
+    * **Encryption**: `DES`.
+    * **Authentication**: `SHA1`.
+    * **DH Group**: `14`.
+    * **Key Life**: `86400`.
+    * **Local ID**: `VPN_ITLA`.
+
+## 3. Comandos de Verificación (CLI)
+Para validar el estado y depurar la conexión desde la consola del FortiGate, utiliza:
+
+* **Listar estado de los túneles**: 
+  `diagnose vpn tunnel list`
+
+* **Forzar el levantamiento del túnel**: 
+  `diagnose vpn tunnel up <nombre_del_tunel>`
+
+* **Debugging de negociación IKE (en caso de fallos)**:
+  ```bash
+  diag vpn ike log filter name <nombre_del_tunel>
+  diag debug application ike -1
+  diag debug enable
