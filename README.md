@@ -35,7 +35,6 @@ Este laboratorio implementa dos VPN de acceso remoto (Client-to-Site) sobre un f
 - Cliente Windows con acceso a Internet para descargar FortiClient VPN (versión free): https://www.fortinet.com/support/product-downloads
 - Navegador (Firefox/Chrome) en la Admin WebTerm para acceder a la GUI del FortiGate.
 
-
 1. Aplicar direccionamiento IP en el orden: **R1 → FortiGate → PC1 → Admin WebTerm** (ver configuraciones CLI en la documentación técnica).
 2. Entrar a la GUI del FortiGate desde la Admin WebTerm: `https://10.11.85.129` (usuario `admin`).
 3. Crear el usuario local `euni` y el grupo `GRP-VPN-SSL` en *User & Authentication*.
@@ -85,4 +84,9 @@ netsh interface ip set address name="Ethernet" static 10.11.85.70 255.255.255.25
 
 <img width="233" height="140" alt="Captura de pantalla 2026-07-02 174235" src="https://github.com/user-attachments/assets/1645cb76-1a1b-4958-90a3-6c4ed026d743" />
 
+<img width="294" height="268" alt="Captura de pantalla 2026-07-02 173414" src="https://github.com/user-attachments/assets/6090c2bc-3811-4ce5-9d50-8eb7a9ab4560" />
+
+<img width="358" height="38" alt="Captura de pantalla 2026-07-02 173505" src="https://github.com/user-attachments/assets/05fccfcc-c9c4-47ce-90b6-be28d741af4a" />
+
+<img width="448" height="295" alt="Captura de pantalla 2026-07-02 173530" src="https://github.com/user-attachments/assets/0659464c-3ce8-4117-994b-ba044b942768" />
 
