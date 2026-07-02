@@ -1,6 +1,7 @@
 # VPN-Client-To-Site# README
+Link de Youtube: https://youtu.be/vi-UODJGL14 
 
-## Descripción del proyecto
+## Descripción 
 
 Este laboratorio implementa dos VPN de acceso remoto (Client-to-Site) sobre un firewall FortiGate: una **SSL-VPN en modo túnel** y una **IPsec VPN en modalidad Dialup**. Ambas permiten que un usuario remoto, mediante el cliente FortiClient, se conecte de forma cifrada a la red LAN interna (`10.11.85.0/26`) donde reside el host PC1.
 
